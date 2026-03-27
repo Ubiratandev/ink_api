@@ -13,7 +13,7 @@ AI-powered tool that generates engaging Instagram captions for tattoo artists ba
 
 ## 📸 Screenshots
 
-![Uploading image.png…]()
+![Uploading home.png…]()
 
 ![Result](./screenshots/result.png)
 
