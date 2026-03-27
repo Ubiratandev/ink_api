@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ink IA</title>
+</head>
+<body>
+   <div class="objetivo">
+    <h2>objetivo da postagem</h2>
+    <select value = "Objetivo da postagem:" id = "objetivo" onchange={changeObjetivo()}>
+    <optgroup>
+        <option value = "aparecer para novos seguideores"> "aparecer para novos seguideores"</option>
+        <option value = "engajar com pessoas que ja viram as suas postagens">"engajar com pessoas que ja viram as suas postagens"</option>
+        <option value = "vender para pessoas que ja engajaram com voce">"vender para pessoas que ja engajaram com voce"</option>   
+    </optgroup>
+   </select>
+   <script>
+    const changeObjetivo =()=>{
+   const objetivo = document.getElementById("objetivo").value;
+    console.log(objetivo);
+   }
+   </script>
+   </div>
+
+   <div class="tipo_tatuagem">
+
+
+    <h2>tipo de tatuagem</h2>
+    <select value = "tipo de tatuagem" id = "tipo">
+    <optgroup>
+        <option value = "0"> "tatuagem nova"</option>
+        <option value = "1">"cobertura"</option>
+        <option value = "2">"reforma"</option>   
+    </optgroup>
+   </select>
+   <script>
+   const changeTipo =()=>{
+    const tipo = document.getElementById("tipo").value;
+    console.log(tipo);
+   }
+   </script>
+   </div>
+
+
+   
+   <div class="estilo da tatuagem">
+
+
+    <h2>estilo da tatuagem</h2>
+    <select value = "estilo da tatuagem" id = "estilo">
+    <optgroup>
+        <option value = "0"> "fine line"</option>
+        <option value = "1">"realismo preto e cinza"</option>
+        <option value = "2">"realismo colorido"</option> 
+        <option value = "3">"neotradicional"</option>   
+  
+    </optgroup>
+   </select>
+   </div>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

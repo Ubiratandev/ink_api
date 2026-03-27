@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ink IA</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Ink IA</h1>
+</header>
+
+<main>
+
+    <!-- Objetivo -->
+    <div class="objetivo">
+        <h2>Objetivo da postagem</h2>
+        <select id="objetivo">
+            <option value="aparecer para novos seguidores">Aparecer para novos seguidores</option>
+            <option value="engajar com pessoas que ja viram as suas postagens">Engajar com pessoas que já viram suas postagens</option>
+            <option value="vender para pessoas que ja engajaram com voce">Vender para quem já engajou</option>
+        </select>
+    </div>
+
+    <!-- Tipo -->
+    <div class="tipo_tatuagem">
+        <h2>Tipo de tatuagem</h2>
+        <select id="tipo">
+            <option value="tatuagem nova">Tatuagem nova</option>
+            <option value="cobertura">Cobertura</option>
+            <option value="reforma">Reforma</option>
+        </select>
+    </div>
+
+    <!-- Estilo -->
+    <div class="estilo">
+        <h2>Estilo da tatuagem</h2>
+        <select id="estilo">
+            <option value="fine line">Fine line</option>
+            <option value="realismo preto e cinza">Realismo preto e cinza</option>
+            <option value="realismo colorido">Realismo colorido</option>
+            <option value="neotradicional">Neotradicional</option>
+        </select>
+    </div>
+
+    <!-- Descrição -->
+    <div class="descricao">
+        <h2>Descrição da tatuagem</h2>
+        <textarea id="descricao" placeholder="Descreva a tatuagem..."></textarea>
+    </div>
+
+    <!-- Botão -->
+    <div class="acoes">
+        <button onclick="enviarPrompt()">Gerar legenda</button>
+    </div>
+
+</main>
+
+<!-- Modal -->
+<div id="modal" class="modal">
+
+    <div class="modal-content">
+        <button class="close" onclick="fecharModal()">X</button>
+
+        <h3>Resultado</h3>
+        <p id="conteudoResposta"></p>
+
+        <button onclick="copyText()">Copy</button>
+    </div>
+
+</div>
+
+<!-- Script -->
+<script src="script.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

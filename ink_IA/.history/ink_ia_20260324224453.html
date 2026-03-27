@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ink IA</title>
+</head>
+<body>
+   <div class="objetivo">
+    <h2>objetivo da postagem</h2>
+    <select value = "Objetivo da postagem:" id = "objetivo" onchange={changeObjetivo()}>
+    <optgroup>
+        <option value = "aparecer para novos seguideores"> "aparecer para novos seguideores"</option>
+        <option value = "engajar com pessoas que ja viram as suas postagens">"engajar com pessoas que ja viram as suas postagens"</option>
+        <option value = "vender para pessoas que ja engajaram com voce">"vender para pessoas que ja engajaram com voce"</option>   
+    </optgroup>
+   </select>
+   <script>
+    const changeObjetivo =()=>{
+   const objetivo = document.getElementById("objetivo").value;
+   }
+   </script>
+   </div>
+
+   <div class="tipo_tatuagem">
+
+
+    <h2>tipo de tatuagem</h2>
+    <select value = "tipo de tatuagem" id ="tipo" onchange={changeTipo()}>
+    <optgroup>
+        <option value = "tatuagem nova"> "tatuagem nova"</option>
+        <option value = "cobertura">"cobertura"</option>
+        <option value = "reforma">"reforma"</option>   
+    </optgroup>
+   </select>
+   <script>
+   const changeTipo =()=>{
+    const tipo = document.getElementById("tipo").value;
+   }
+   </script>
+   </div>
+
+
+   
+   <div class="estilo da tatuagem">
+
+
+    <h2>estilo da tatuagem</h2>
+    <select value = "estilo da tatuagem" id = "estilo" onchange = {changeEstilo()}>
+    <optgroup>
+        <option value = "fine line"> "fine line"</option>
+        <option value = "realismo preto e cinza">"realismo preto e cinza"</option>
+        <option value = "realismo colorido">"realismo colorido"</option> 
+        <option value = "neotradicional">"neotradicional"</option>   
+  
+    </optgroup>
+   </select>
+   <script>
+    const changeEstilo = ()=>{
+        const estilo = document.getElementById("estilo").value;
+    }
+   </script>
+   </div>
+
+<div>
+  <h2>Descrição da tatuagem</h2>
+
+  <textarea id="descricao"></textarea>
+
+
+  <script>
+    let desc = "";
+
+    const descricao = document.getElementById("descricao");
+
+    descricao.addEventListener("input", () => {
+      desc = descricao.value;
+    
+    });
+  </script>
+</div>
+
+
+    <div id="modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6);">
+  
+  <div style="background:white; padding:20px; margin:10% auto; width:60%; border-radius:10px;">
+    
+    <button onclick="fecharModal()">X</button>
+    
+    <h3>Resultado</h3>
+    <p id="conteudoResposta"></p>
+
+  </div>
+
+</div>
+
+
+   <div>
+<button onclick="enviarPrompt()">Enviar prompt</button>
+   <script>
+    const enviarPrompt =()=>{
+        let prompt = `Você é um especialista em marketing para tatuadores.
+
+Crie uma legenda para Instagram com base EXCLUSIVAMENTE nas informações abaixo:
+
+Descrição: ${desc}
+Tipo: ${tipo}
+Estilo: ${estilo}
+Objetivo: ${objetivo}
+
+REGRAS IMPORTANTES:
+- NÃO invente elementos que não estão na descrição
+- NÃO substitua palavras por sinônimos (ex: borboleta ≠ mariposa)
+- Use exatamente os conceitos fornecidos
+- Seja fiel à descrição
+- Não adicione nada que não seja referente a postagem, nem comentarios nem observações
+
+A legenda deve:
+- Ser envolvente e natural
+- Conversar com o público de tatuagem
+- Incluir um CTA sutil
+
+Inclua também:
+- 10 hashtags relevantes BASEADAS SOMENTE na descrição
+
+Formato:
+
+Legenda:
+CTA:
+Hashtags:`
+enviar(prompt)
+    }
+   </script>
+   </div>
+
+   <script>
+    async function enviar(prompt) {
+        
+  const response = await fetch("http://localhost:5000/gerar", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      prompt: prompt
+    })
+  });
+
+  const data = await response.json();
+abrirModal(data.choices[0].message.content);
+//   console.log(data.resposta);
+
+}
+   </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

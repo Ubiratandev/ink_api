@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ink IA</title>
+</head>
+<body>
+   <div class="objetivo">
+    <h2>objetivo da postagem</h2>
+    <select value = "Objetivo da postagem:" id = "objetivo" onchange={changeObjetivo()}>
+    <optgroup>
+        <option value = "aparecer para novos seguideores"> "aparecer para novos seguideores"</option>
+        <option value = "engajar com pessoas que ja viram as suas postagens">"engajar com pessoas que ja viram as suas postagens"</option>
+        <option value = "vender para pessoas que ja engajaram com voce">"vender para pessoas que ja engajaram com voce"</option>   
+    </optgroup>
+   </select>
+   <script>
+    const changeObjetivo =()=>{
+   const objetivo = document.getElementById("objetivo").value;
+    console.log(objetivo);
+   }
+   </script>
+   </div>
+
+   <div class="tipo_tatuagem">
+
+
+    <h2>tipo de tatuagem</h2>
+    <select value = "tipo de tatuagem" id ="tipo" onchange={changeTipo()}>
+    <optgroup>
+        <option value = "tatuagem nova"> "tatuagem nova"</option>
+        <option value = "cobertura">"cobertura"</option>
+        <option value = "reforma">"reforma"</option>   
+    </optgroup>
+   </select>
+   <script>
+   const changeTipo =()=>{
+    const tipo = document.getElementById("tipo").value;
+    console.log(tipo);
+   }
+   </script>
+   </div>
+
+
+   
+   <div class="estilo da tatuagem">
+
+
+    <h2>estilo da tatuagem</h2>
+    <select value = "estilo da tatuagem" id = "estilo" onchange = {changeEstilo()}>
+    <optgroup>
+        <option value = "fine line"> "fine line"</option>
+        <option value = "realismo preto e cinza">"realismo preto e cinza"</option>
+        <option value = "realismo colorido">"realismo colorido"</option> 
+        <option value = "neotradicional">"neotradicional"</option>   
+  
+    </optgroup>
+   </select>
+   <script>
+    const changeEstilo = ()=>{
+        const estilo = document.getElementById("estilo").value;
+        console.log(estilo);
+    }
+   </script>
+   </div>
+
+   <button value = "enviar prompt"></button>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
